@@ -46,8 +46,10 @@ The following repository consists of knowledge gained and steps followed while d
        - [TASK 3: calculating delays and fall time](#task-3-calculating-delays-and-fall-time)
 * [DAY 4 Pre-layout timing analysis and importance of good clock tree](#day-4-pre---layout-timing-analysis-and-importance-of-good-clock-tree)
    - [Pre-layout timing analysis and importance of good clock tree](#pre-layout-timing-analysis-and-importance-of-good-clock-tree)
-* [DAY 5 - Final step for RTL2GDS]
+* [DAY 5 - Final step for RTL2GDS](#day-5-Final step for RTL2GDS)
+
 # About RTL to GDSII Flow
+
 RTL (Register tranfer level) to GDSII (Graphic Data Stream) flow consists of the complete set of steps required to create a file which could be sent for tapeout. The RTL code is synthesized and optimised. After sysnthesis of the code, PnR, floor and power planning is done while keeping in check the timing constraints. At the end GDSII file is written out.
 The complete flow consists of following steps:
 * Writting RTL
