@@ -77,59 +77,89 @@ It is an open-source VLSI flow created using open source tools. Basically it is 
 # AIM - The main objective of the ASIC Design flow is to take the design from RTL to GDSII format.
 
 # Day 1 (25-01-2023)- Inception of open-source EDA, OpenLANE and Sky130 PDK
-  ## How to talk to computers
-  ### IC Terminologies
-  In the complete flow to this RTL2GDS physical designing there are lot of terminologies one comes across. Some of these terms are described below.
+ 
+ ## How to talk to computers
+ 
+ ### IC Terminologies
+ 
+ In the complete flow to this RTL2GDS physical designing there are lot of terminologies one comes across. Some of these terms are described below.
+  
   * Package - ICs are basically presents as packages. These packages are materials which contains the semiconductor device. These packages protect the device from damage. these are of various kind. An example of QFN-48 (Quad Falt No-Leads) with 48 pins is taken here.
   
   ![package](https://user-images.githubusercontent.com/69652104/214497117-07e825ff-26dc-4a42-ac74-d103bdcaa6d5.png)
+  
   * Chip - It sits in the centre of the package. The chip is connected to the package pins using **wire bond**. Inside the chip we have various components such as pad, core, interconnects, etc.
-  * Pads - These are the itermediate structure through which the internal signals from the core of IC is connected to the external pins of the chip. These pads are organised as Pad Frame. There are different kind of pads for input, output, power supply and ground.
-  * Core - It is the place where all the logic units (gates, muxs, etc) are presnet inside the chip. These are able to execute the set of instructions given to the chip and produce an output.
-  * Die - It is the block which consists of semiconducting material and it can be used to build certain functional cuircuit which can be further sent for fabrication. It is the entire size of the chip.
+ 
+ * Pads - These are the itermediate structure through which the internal signals from the core of IC is connected to the external pins of the chip. These pads are organised as Pad Frame. There are different kind of pads for input, output, power supply and ground.
+ 
+ * Core - It is the place where all the logic units (gates, muxs, etc) are presnet inside the chip. These are able to execute the set of instructions given to the chip and produce an output.
+
+* Die - It is the block which consists of semiconducting material and it can be used to build certain functional cuircuit which can be further sent for fabrication. It is the entire size of the chip.
+  
   ![Die](https://user-images.githubusercontent.com/69652104/214504383-203376f6-4efe-40f3-a713-644c64ed1bbc.png)
+  
   ### Introduction to RISC-V
+  
   **[RISC-V](https://riscv.org/technical/specifications/)** is an open instruction set architechture rooted on **reduced instruction set computer principles**. It is an open source ISA used for processor design. 
-  #### RISC-V Characterstics
-  * It uses one clock cycle per instruction.
+ 
+ #### RISC-V Characterstics
+ 
+ * It uses one clock cycle per instruction.
   * It follows the th RISC Princples. 
   * It has both 32-bit and 64-bit varients. It also support floating point instruction.
   * It avoids micro-architechture or technology dependent features.
   * It accelerates the time for design to reach the market as it uses open-source IP.
   
   ### Software to Hardware 
+  
   The flow shows how the high level language (at software end) gets converted to machine language (at hardware end) and then gets executed on the package.
-  #### What happens when we run a program?
-  Suppose a C program needs to run on a hardware. So we nned to pass this C program to the hardware. So firstly the C program is compiled into assembly language (RISC-V assembly language program). Now this assmebly language is converted into the machine language program (basically 1's and 0's). Now this 1's and 0's are understanable by the hardware.
+ 
+ #### What happens when we run a program?
+ 
+ Suppose a C program needs to run on a hardware. So we nned to pass this C program to the hardware. So firstly the C program is compiled into assembly language (RISC-V assembly language program). Now this assmebly language is converted into the machine language program (basically 1's and 0's). Now this 1's and 0's are understanable by the hardware.
+
 #### How does an application run on a computer?
+
 1. The application software enters the system software (major component of it are OS, Compiler and Assembler). 
  * The OS handles I/O operations, memories and many low level functions.
  * then the program passes to Compiler which changes the program to Assembly language (compiled into instructions depends upon the hardware).
  * Now the instruction set goes to Assembler. Assembler converts the instruction set to machine language (binary numbers). 
 2. The system software converts the apllication software into binary language. 
 3. Now these binary numbers enter our chip layout and according the function is performed.
+
 ![image](https://user-images.githubusercontent.com/69652104/214534459-5706003b-cec0-4cf9-b8a9-73463cfb434e.png)
+
 ## SoC design and OpenLane
+
 ### Introduction to Digital design
+
 For designing Digital ASIC ICs we require following components and some of it's opensource resources are also mentioned. 
+ 
  * RTL models (old IP's) {github.com, librecores.org, etc}
  * EDA tool {OpenROAD, OpenLANE, etc}
  * PDK Data {SKYWater 130} 
  
  In the workshop every component is used from sources which are open soucre. The following image gives an idea about each component as an open source resource. 
+
 ![image](https://user-images.githubusercontent.com/69652104/214576102-b48d6010-44a6-466a-b9cb-62adcb012c5e.png)
  
 #### What is a PDK? 
+
 PDK stands for Process Design Kit, it is provided by foundaries and it consists of library or set of building blocks which are used to build ICs. Each component in the library is seperate building bolck and ae made following certain foundary rules.
 PDKs acts as an inteface between the FABs and the designeers. PDKs have collection of files whcih are used to model a fabrication process for the EDA tools used to design an IC. PDK consists of tecnology node information, Process Design Rules (to verify DRC, LVC, PEX, etc), device model, I/O libraries, Standard cell libraries, macros files, lef files, etc.
+
 **Google along with SKYWater made the laters PDK opensource (130 nm node).** The PDK only need data information for successful implementation.
+
 #### Environment Setup
+
 The OpenLANE flow requires various open source tools as well as their supporting tools to be installed for the complete Physical design flow. Installing this tools one by one is tedious as well as one can get lost in the steps. Installation can be done easily using some set of scripts present in following repositories [VSDFlow](https://github.com/kunalg123/vsdflow) (for installing Yosys, OpenSTA, Magic, OpenTimer, netgent, etc)  and [OpenLANE Build Scripts](https://github.com/nickson-jose/openlane_build_script).
+
 ### Simplified RTL to GDSII Flow
    
 ![gnome-shell-screenshot-6miv9a](https://user-images.githubusercontent.com/69652104/214678043-5d9b90e2-e05b-42a4-a893-5ab572dd1ff0.png)
    The flow starts from the HDL code i.e.RTL model and ends with GDSII file. The major implimenation steps are:
-   * Synthesis - During synthesis the HDL design is translated into circuits,  which are made up of components present in the standard cell library. The resultant circuit is described in HDL and its referred as gate level netlist which is functional equivalent of RTL code. The library building block of cell have regular layouts, cell layout is enclosed by fixed height (rectanglar in shape) whereas the width is variable an is discrete i.e., integer multiple of unit call side width.
+  
+  * Synthesis - During synthesis the HDL design is translated into circuits,  which are made up of components present in the standard cell library. The resultant circuit is described in HDL and its referred as gate level netlist which is functional equivalent of RTL code. The library building block of cell have regular layouts, cell layout is enclosed by fixed height (rectanglar in shape) whereas the width is variable an is discrete i.e., integer multiple of unit call side width.
                        
 ![image](https://user-images.githubusercontent.com/69652104/214678337-67f65f23-30e9-499d-b5d2-bcdb35758077.png)
    
@@ -140,20 +170,31 @@ The OpenLANE flow requires various open source tools as well as their supporting
    * Power Planning - The power network is constructed typically for a chip was it has to power multiple VDD and ground pins. The power pin are connected to all component through rings and multiple horizontal and vertical strips. Sach parallel structure is meant to reduce the resistance.
   
 ![gnome-shell-screenshot-12eny2](https://user-images.githubusercontent.com/69652104/214678807-208f9984-65ac-4df7-af16-a0399e19ee49.png)
-   * Placements - For macros we place the GATE level netlist cell on vertical rows. To reduce the interconnect delay conical cells are placed very close to each other and this is also done to enable successful routing afterwards. Placement is done in two ways Global placement and detailed placement. Global placement provide optimal result and these may or may not be legal where as the detail placement is always legal.
+  
+  * Placements - For macros we place the GATE level netlist cell on vertical rows. To reduce the interconnect delay conical cells are placed very close to each other and this is also done to enable successful routing afterwards. Placement is done in two ways Global placement and detailed placement. Global placement provide optimal result and these may or may not be legal where as the detail placement is always legal.
+
 ![image](https://user-images.githubusercontent.com/69652104/214679067-e04bca1c-a4dd-4099-9feb-ab1cb5b1743f.png)
-   * Clock Tree Synthesis (CTS) - Before signal routing clock routing is done so that the clock distribution is done to every sequential block. Clock distribution network delivers the clock to each of the sequential block. It is done so that there is minimum skew and latency. It usually follows a shape i.e., H-tree, X-tree, etc.
+  
+  * Clock Tree Synthesis (CTS) - Before signal routing clock routing is done so that the clock distribution is done to every sequential block. Clock distribution network delivers the clock to each of the sequential block. It is done so that there is minimum skew and latency. It usually follows a shape i.e., H-tree, X-tree, etc.
+
 ![image](https://user-images.githubusercontent.com/69652104/214679269-79bb1c1f-2f82-4857-9248-1f55c18ec41c.png)
-   * Routing - The signal routing is done using metal layers. It is essential to find valid pattern of horizontal and verticle wires to implement the nets that connects the cells together. Router uses the available metal layers as defined by the PDK. For each metal layer the PDK defines the thickness, width, pitch and vias. Vias are used to connect two metal wires. SkyWater 130nm has 6 metal layers.
+ 
+ * Routing - The signal routing is done using metal layers. It is essential to find valid pattern of horizontal and verticle wires to implement the nets that connects the cells together. Router uses the available metal layers as defined by the PDK. For each metal layer the PDK defines the thickness, width, pitch and vias. Vias are used to connect two metal wires. SkyWater 130nm has 6 metal layers.
+
 ![image](https://user-images.githubusercontent.com/69652104/214679422-b3ec0d10-5a54-4203-b5b8-705d5245b8a2.png)
-   * Verification and Sign-offs - After PnR and CTS we perform verifications, to check whether our layout is valid or not. These verifications consists of Physical verification such as DRC and LVS. Design Rules Checking (DRC) ensures that the layout follows the design rules and Layout Vs Schematic ensures that the final layout is as per the synthesised gate level netlist or not. Finally Static Timing Analysis is done (STA) to make sure that all the timing constraints are met by the circuit.
+ 
+ * Verification and Sign-offs - After PnR and CTS we perform verifications, to check whether our layout is valid or not. These verifications consists of Physical verification such as DRC and LVS. Design Rules Checking (DRC) ensures that the layout follows the design rules and Layout Vs Schematic ensures that the final layout is as per the synthesised gate level netlist or not. Finally Static Timing Analysis is done (STA) to make sure that all the timing constraints are met by the circuit.
    
 ### About OpenLANE
+
 [OpenLANE](https://openlane.readthedocs.io/en/latest/) is a flow which uses various open source tools for the RTL to GDSII flow. It has the striVe family of open everything SoCs (Open PDK, Open EDA, Open RTL). The various tools it uses are Yosys, OpenROAD, Magic, Netgen, SPEF_Extraction, etc.  
+
 * It has two mode of Operations: Autonomus and Interactive
 * It is tuned for SKYWater 130nm open PDK.
 * OpenLANE ASIC flow is shown below. 
+
 ![image](https://user-images.githubusercontent.com/69652104/214687083-4fadeba1-1a31-4794-9c83-13f924430f3e.png)
+
 * The flow starts with RTL Synthesis. RTL is fed to Yosys with the design constraints. Yosys translates the RTL into a logic circuit using generic components. 
 * the circuit can be optimized and then mapped with standard cell library usin the tool abc. There are [abc scrript](http://people.eecs.berkeley.edu/~alanmi/abc/) to guide the optimization. OpenLANE has several abc scripts which has different synthesis statergies (least area, least power consumption, etc). The synthesis exploration utility is for statergy exploration and report generation.
 * OpenLANE has design exploration utility which can be used to sweep the design configurations (16 in total) and it genrates reports which has different design matrix and also shows the number of violations in layout. It is used for regression testing and to find the best configuration of our design. 
@@ -166,9 +207,13 @@ The OpenLANE flow requires various open source tools as well as their supporting
 /*hence a long wire is simulated it acts as an antenna but as a conductor it collects charges which can damage the transistor gates connected to the wire during fab. So the length of wire connected to transistor gate must be limited. This is done by the help of Router.*/
 * The sign off include STA, DRC and LVS. It also involves interconnect RC extraxtion from the routed layout followed by STA using OpenSTA.
 * Physical signoffs include DRC and LVS. DRC and LVS is performed using Magic tool. Circuit extraction is done NetGen.
+
 ## Getting familier to open-source EDA tools
+
 ### Contents of the OpenLANE Directory
+
 The following content is specific to the workshop. There are lot of other files present in the directory too.
+
 1. **OpenLane folder** - It contains all the tools and the file that need to be invoked during the flow.
 2. **Designs** - This folder consists of all the designs requried during the flow (picorv32a is the design used in this workshop)
 3. PDKs - This folder contains all the pdk related files as well as information. (open pdk, Sky130, Skywater pdk).
@@ -177,10 +222,12 @@ The following content is specific to the workshop. There are lot of other files 
 * skywater pdk consists of skywater 130 nm pdks.
 **NOTE:** - Here **sky130_fd_sc_hd libs.tech** is being used.
 4. config files - It bypasses any configuration that has already been done i.e., many of the switches use default value that is already present in the OpenLane flow.
+
 **The precedence order of Openlane settings are:**
 * sky130_xyz_config.tcl
 * config.tcl
 * Default value (already set in OpenLane)
+
 ### LAB Day 1 (25-01-2023)
 
 **Step 1:** STEPS TO RUN or INVOKING OPENLANE
