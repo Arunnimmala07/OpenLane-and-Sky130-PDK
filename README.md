@@ -76,27 +76,6 @@ It is an open-source VLSI flow created using open source tools. Basically it is 
   | SPEF_EXTRACTOR | Generation of SPEF file from DEF file |
 # AIM - The main objective of the ASIC Design flow is to take the design from RTL to GDSII format.
 
-# STEPS TO RUN or INVOKING OPENLANE
-1. Go to /path/to/openlane (i.e., ~/work/tools/openlane_working_dir/Openlane)
-2. ~/work/tools/openlane_working_dir/Openlane$ docker
-   ~ then it opens to 
-3.  bash -4.2$
-
-4. bash -4.2$./flow.tcl -interative  ( NOTE: the term interactive gives us step by step process of flow)
-
-![01](https://user-images.githubusercontent.com/123537301/215445793-82f14cef-8edf-4010-80b0-1b251d8649b3.jpg)
-
-~ then it opens the 
-~%
-~ % package require openlane 0.9
-~ then it open to 
-~0.9
-~%
-
-![02](https://user-images.githubusercontent.com/123537301/215446972-aca01022-2f87-4295-8746-09bda1d63aa9.jpg)
-
-
-
 # Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK
   ## How to talk to computers
   ### IC Terminologies
@@ -203,6 +182,29 @@ The following content is specific to the workshop. There are lot of other files 
 * config.tcl
 * Default value (already set in OpenLane)
 ### LAB Day 1
+
+# STEPS TO RUN or INVOKING OPENLANE
+1. Go to /path/to/openlane (i.e., ~/work/tools/openlane_working_dir/Openlane)
+* Then run the **docker** command.
+2. ~/work/tools/openlane_working_dir/Openlane$ docker
+   ~ then it opens to 
+3.  bash -4.2$
+* Now run the **flow.tcl** file with interactive mode.
+4. bash -4.2$./flow.tcl -interative  ( NOTE: the term interactive gives us step by step process of flow)
+
+![01](https://user-images.githubusercontent.com/123537301/215445793-82f14cef-8edf-4010-80b0-1b251d8649b3.jpg)
+
+~ then it opens the 
+~%
+* Now import packages
+~ % package require openlane 0.9
+~ then it open to 
+~0.9
+~%
+
+![02](https://user-images.githubusercontent.com/123537301/215446972-aca01022-2f87-4295-8746-09bda1d63aa9.jpg)
+
+
 **Step 1:** Starting OpenLane
 * Go to openlane folder.
 ```
