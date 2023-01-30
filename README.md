@@ -46,7 +46,7 @@ The following repository consists of knowledge gained and steps followed while d
        - [TASK 3: calculating delays and fall time](#task-3-calculating-delays-and-fall-time)
 * [DAY 4 - Pre-layout timing analysis and importance of good clock tree](#day-4-pre---layout-timing-analysis-and-importance-of-good-clock-tree)
    - [Pre-layout timing analysis and importance of good clock tree](#pre-layout-timing-analysis-and-importance-of-good-clock-tree)
-* [DAY 5 - Final step for RTL2GDS](#day-5-Final step for RTL2GDS)
+* [DAY 5 - Final step for RTL2GDS](#day-5-final-step-for-rtl2gds)
 
 # About RTL to GDSII Flow
 
@@ -87,6 +87,8 @@ It is an open-source VLSI flow created using open source tools. Basically it is 
 # AIM - The main objective of the ASIC Design flow is to take the design from RTL to GDSII format.
 
 # Day 1 (25-01-2023)- Inception of open-source EDA, OpenLANE and Sky130 PDK
+
+## THEORY
  
  ## How to talk to computers
  
@@ -257,6 +259,7 @@ package require openlane 0.9
 ![02](https://user-images.githubusercontent.com/123537301/215446972-aca01022-2f87-4295-8746-09bda1d63aa9.jpg)
 
 * Now we are good to go to execute our commands.
+
 **NOTE** : The above commands are to be run everytime we use OpenLANE for RTL2GDSII flow.
 
 **Step 2:** Design Preperation
@@ -329,6 +332,8 @@ The synthesis statisttics report is as follows:
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Day 2 (26-01-2023)- Good floorplan vs bad floorplan and introduction to library cells
+
+## THEORY
 
 ## Chip Floor planning
 
@@ -609,6 +614,8 @@ Placement ensures that the standard cells are correctly placed.
 PDN is created during floorplan. But is Openlane there is a post floorplan, post placement and CTS is done for PDN.
 
 # Day 3 (27-01-2023)- Design library cell using Magic Layout and ngspice characterization
+
+## THEORY
 
 ## LAB Day 3 (Part-1)
 
@@ -921,7 +928,9 @@ Now we can use magic to analyse the DRC rule and fix it if it's violated.
 
 <!--- magic is invoked here by using the following command magic -d XR --->
 
-# DAY 4 Pre-layout timing analysis and importance of good clock tree
+# DAY 4 (28-01-2023) Pre-layout timing analysis and importance of good clock tree
+
+## THEORY
 
 ## LAB DAY 4 (PART 1)
 
@@ -972,6 +981,7 @@ We can observe horizontal and verticle crossing also we can observe the grid spa
 ![image](https://user-images.githubusercontent.com/69652104/215277507-cc2ed8ab-d6e4-40ff-b903-2eb0afd9748f.png)
 
 **Step 2nd requirement**
+
 The width of the std cell in x direction (x pitch) should be odd multiple of the x pitch and height of the std cell y direction should be odd multiple of the y pitch. We find that the grids are as per our conditions.
 
 **Step 3 LEF file extraction ***
@@ -1518,11 +1528,10 @@ When the openlane is building the CTS, it is actually trying to met the skew val
 
 `top` command is used to see all the process.
 
-#Day-5-Final step for RTL2GDS
+## Day-5 (29-01-2023)-Final step for RTL2GDS
 
 ## THEORY
 
-## LAB DAY 5
 
 * The command to load the previous files (basically whatever you have done).
 
@@ -1610,7 +1619,7 @@ Generated layout
 # REFERENCES
 
 [Kunal Ghosh - Co-founder of VSD](https://www.udemy.com/user/anagha/)
+
 [Nickson Jose - Workshop Instructor](https://www.udemy.com/user/nickson-jose/)
 [OpenLANE-Sky130-Physical-Design-Workshop](https://github.com/AngeloJacobo/OpenLANE-Sky130-Physical-Design-Workshop#floorplan-stage)
-[Nickson Jose - Workshop Instructor](https://www.udemy.com/user/nickson-jose/)
-[OpenLANE-Sky130-Physical-Design-Workshop](https://github.com/AngeloJacobo/OpenLANE-Sky130-Physical-Design-Workshop#floorplan-stage)
+
