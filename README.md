@@ -79,11 +79,22 @@ It is an open-source VLSI flow created using open source tools. Basically it is 
 # STEPS TO RUN or INVOKING OPENLANE
 1. Go to /path/to/openlane (i.e., ~/work/tools/openlane_working_dir/Openlane)
 2. ~/work/tools/openlane_working_dir/Openlane$ docker
-   then it opens to 
+   ~ then it opens to 
 3.  bash -4.2$
-4. ./flow.tcl -interative  ( NOTE: the term interactive gives us step by step process of flow)
+
+4. bash -4.2$./flow.tcl -interative  ( NOTE: the term interactive gives us step by step process of flow)
 
 ![01](https://user-images.githubusercontent.com/123537301/215445793-82f14cef-8edf-4010-80b0-1b251d8649b3.jpg)
+
+~ then it opens the 
+~%
+~ % package require openlane 0.9
+~ then it open to 
+~0.9
+~%
+
+![02](https://user-images.githubusercontent.com/123537301/215446972-aca01022-2f87-4295-8746-09bda1d63aa9.jpg)
+
 
 
 # Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK
