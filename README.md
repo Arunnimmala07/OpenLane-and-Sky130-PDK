@@ -1111,11 +1111,7 @@ Generated layout
 [Kunal Ghosh - Co-founder of VSD](https://www.udemy.com/user/anagha/)
 [Nickson Jose - Workshop Instructor](https://www.udemy.com/user/nickson-jose/)
 [OpenLANE-Sky130-Physical-Design-Workshop](https://github.com/AngeloJacobo/OpenLANE-Sky130-Physical-Design-Workshop#floorplan-stage)
-# Inquires
-[Abhishek Ranjan](https://www.linkedin.com/in/abhishek-ranjan-3b5009195)
-<!--- ![image](https://user-images.githubusercontent.com/69652104/215361335-33d6d6ad-ae20-49b3-a6f5-9a75e700578f.png) --->
 [Nickson Jose - Workshop Instructor](https://www.udemy.com/user/nickson-jose/)
 [OpenLANE-Sky130-Physical-Design-Workshop](https://github.com/AngeloJacobo/OpenLANE-Sky130-Physical-Design-Workshop#floorplan-stage)
-# Inquires
-[Abhishek Ranjan](https://www.linkedin.com/in/abhishek-ranjan-3b5009195)
-<!--- ![image](https://user-images.githubusercontent.com/69652104/215361335-33d6d6ad-ae20-49b3-a6f5-9a75e700578f.png) --->
+
+![Picture1](https://user-images.githubusercontent.com/123537301/215403117-cb2196cc-2a9b-407b-be98-9c945aa417a1.png)
