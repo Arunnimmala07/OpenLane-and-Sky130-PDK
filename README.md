@@ -75,6 +75,17 @@ It is an open-source VLSI flow created using open source tools. Basically it is 
   | [NGSPICE](https://github.com/imr/ngspice) | SPICE Extraction and Simulation |
   | SPEF_EXTRACTOR | Generation of SPEF file from DEF file |
 # AIM - The main objective of the ASIC Design flow is to take the design from RTL to GDSII format.
+
+# STEPS TO RUN or INVOKING OPENLANE
+1. Go to /path/to/openlane (i.e., ~/work/tools/openlane_working_dir/Openlane)
+2. ~/work/tools/openlane_working_dir/Openlane$ docker
+   then it opens to 
+3.  bash -4.2$
+4. ./flow.tcl -interative  ( NOTE: the term interactive gives us step by step process of flow)
+
+![01](https://user-images.githubusercontent.com/123537301/215445793-82f14cef-8edf-4010-80b0-1b251d8649b3.jpg)
+
+
 # Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK
   ## How to talk to computers
   ### IC Terminologies
